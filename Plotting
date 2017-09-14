@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+
+
+
+# This function plots EDA values in time based on the interval
+# time -- the time of each eda value generated with function: time_extraction(eda)
+# interval -- the interval extracted with function: interval(time, beg, en)
+# eda -- eda values
+# lb -- is the label we want to assign to a particular plot
+# col -- is plot color
+def graphic(time, interval, eda, lb, col):
+    # ax = fig.add_subplot(111)
+    plt.plot(time[interval[0]:interval[1]], eda[interval[0]:interval[1]], label=lb, color=col)
+    plt.xlabel("time")
+    plt.ylabel("EDA")
+    plt.legend()
+
+    return
+
+def plot2(time, eda, lb, c):
+#     plt.plot()
+    plt.xlabel("time")
+    plt.ylabel("EDA")
+    plt.gcf().autofmt_xdate()
+    plt.plot(time,eda,label=lb, color = c)
+    plt.legend()
